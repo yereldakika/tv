@@ -12,35 +12,31 @@
             background-color: #000;
             color: #fff;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         iframe {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             border: none;
+            z-index: 9999;
         }
     </style>
 </head>
 <body>
     <iframe 
-        src="https://www.artidijitalmedya.com/embed/tv/kanalfirat/" 
+        src="https://www.artidijitalmedya.com/embed/tv/kanalfirat/?autoplay=1" 
         allowfullscreen 
-        allow="fullscreen; autoplay; encrypted-media; picture-in-picture">
+        allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
+        playsinline>
     </iframe>
     <script>
         document.addEventListener('fullscreenchange', () => {
             const iframe = document.querySelector('iframe');
             if (document.fullscreenElement) {
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-            } else {
-                iframe.style.width = '';
-                iframe.style.height = '';
+                // Tam ekran modunda iframe yeniden yüklenebilir
+                iframe.src = iframe.src;
             }
         });
     </script>
