@@ -26,7 +26,7 @@
 </head>
 <body>
     <iframe 
-        src="https://www.artidijitalmedya.com/embed/tv/kanalfirat/?autoplay=1" 
+        src="https://www.artidijitalmedya.com/embed/tv/kanalfirat/" 
         allowfullscreen 
         allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
         playsinline>
@@ -35,8 +35,13 @@
         document.addEventListener('fullscreenchange', () => {
             const iframe = document.querySelector('iframe');
             if (document.fullscreenElement) {
-                // Tam ekran modunda iframe yeniden yüklenebilir
-                iframe.src = iframe.src;
+                iframe.style.position = 'fixed';
+                iframe.style.width = '100vw';
+                iframe.style.height = '100vh';
+            } else {
+                iframe.style.position = '';
+                iframe.style.width = '';
+                iframe.style.height = '';
             }
         });
     </script>
