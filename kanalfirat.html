@@ -1,49 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KANAL FIRAT</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #000;
-            color: #fff;
-            overflow: hidden;
-        }
-        iframe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            border: none;
-            z-index: 9999;
-        }
-    </style>
-</head>
-<body>
-    <iframe 
-        src="https://www.artidijitalmedya.com/embed/tv/kanalfirat/" 
-        allowfullscreen 
-        allow="fullscreen; autoplay; encrypted-media; picture-in-picture"
-        playsinline>
-    </iframe>
-    <script>
-        document.addEventListener('fullscreenchange', () => {
-            const iframe = document.querySelector('iframe');
-            if (document.fullscreenElement) {
-                iframe.style.position = 'fixed';
-                iframe.style.width = '100vw';
-                iframe.style.height = '100vh';
-            } else {
-                iframe.style.position = '';
-                iframe.style.width = '';
-                iframe.style.height = '';
-            }
-        });
-    </script>
-</body>
-</html>
+<iframe src="https://www.artidijitalmedya.com/embed/tv/kanalfirat/" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        allowfullscreen>
+</iframe>
