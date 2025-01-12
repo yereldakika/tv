@@ -2,10 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Iframe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Yatay Modu Engelle</title>
     <style>
-        /* Varsayılan 16:9 oranlı kapsayıcı */
+        /* Yatay modu engelleyen CSS */
+        @media (orientation: landscape) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #000;
+                color: #fff;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+
+            .landscape-warning {
+                display: block;
+            }
+
+            .responsive-iframe {
+                display: none; /* Yatay moddayken iframe gizlenir */
+            }
+        }
+
+        @media (orientation: portrait) {
+            .landscape-warning {
+                display: none;
+            }
+
+            .responsive-iframe {
+                display: block;
+            }
+        }
+
         .responsive-iframe {
             position: relative;
             width: 100%;
@@ -14,7 +45,6 @@
             overflow: hidden;
         }
 
-        /* Iframe stili */
         .responsive-iframe iframe {
             position: absolute;
             top: 0;
@@ -23,17 +53,12 @@
             height: 100%;
             border: 0;
         }
-
-        /* Medya sorgusu: Yatay moda geçtiğinde yüksekliği ayarla */
-        @media (orientation: landscape) {
-            .responsive-iframe {
-                height: 100vh; /* Yatay modda kapsayıcı yüksekliği ekranın tamamını kaplasın */
-                padding-bottom: 0; /* Sabit yüksekliği koruduğumuz için padding gerekmez */
-            }
-        }
     </style>
 </head>
 <body>
+    <div class="landscape-warning">
+        Bu uygulama sadece dikey modda çalışır. Lütfen cihazınızı dik tutun.
+    </div>
     <div class="responsive-iframe">
         <iframe 
             src="https://www.artidijitalmedya.com/embed/tv/kanal23/" 
