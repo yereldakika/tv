@@ -1,8 +1,45 @@
-<div style="position:relative; width:100%; height:0; padding-bottom:56.25%; overflow:hidden;">
-    <iframe 
-        src="https://www.artidijitalmedya.com/embed/tv/kanalfirat/" 
-        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
-        frameborder="0" 
-        scrolling="no">
-    </iframe>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Iframe</title>
+    <style>
+        /* Varsayılan 16:9 oranlı kapsayıcı */
+        .responsive-iframe {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 oranı */
+            overflow: hidden;
+        }
+
+        /* Iframe stili */
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Medya sorgusu: Yatay moda geçtiğinde yüksekliği ayarla */
+        @media (orientation: landscape) {
+            .responsive-iframe {
+                height: 100vh; /* Yatay modda kapsayıcı yüksekliği ekranın tamamını kaplasın */
+                padding-bottom: 0; /* Sabit yüksekliği koruduğumuz için padding gerekmez */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="responsive-iframe">
+        <iframe 
+            src="https://www.artidijitalmedya.com/embed/tv/kanalfirat/" 
+            frameborder="0" 
+            scrolling="no">
+        </iframe>
+    </div>
+</body>
+</html>
